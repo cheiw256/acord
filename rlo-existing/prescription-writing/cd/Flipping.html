@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Single Activity</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//kuhan-url///rlo-specs/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//kuhan-url///rlo-specs/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="//kuhan-url///rlo-specs/css/screen.css">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//kuhan-url///rlo-specs/scripts/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//kuhan-url///rlo-specs/scripts/bootstrap.min.js"></script>
+<script src="//kuhan-url///rlo-specs/scripts/rlo-spec-help.js"></script>
+<!--
+
+<link rel="stylesheet" type="text/css" href="//kuhan-url///rlo-specs/css/print.css" media="print">
+<script type="text/javascript" src="//kuhan-url///rlo-specs/scripts/jquery-latest.js"></script>
+<script type="text/javascript" src="//kuhan-url///rlo-specs/scripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="//kuhan-url///rlo-specs/scripts/modernizr.js"></script>
+<script type="text/javascript" src="//kuhan-url///rlo-specs/scripts/bootstrap.min.js"></script>
+-->
+
+<link rel="shortcut icon" href="//kuhan-url///rlo-specs/images/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//kuhan-url///rlo-specs/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//kuhan-url///rlo-specs/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//kuhan-url///rlo-specs/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="//kuhan-url///rlo-specs/images/apple-touch-icon-57x57-precomposed.png">
+<link rel="icon" sizes="192x192" href="images///kuhan-url///rlo-specs/icon-192x192.png">
+
+<script src="//kuhan-url///rlo-specs/tinymce/tinymce.min.js"></script>
+<script>
+
+ function myFileBrowser (field_name, url, type, win) {
+
+    // alert("Field_Name: " + field_name + "nURL: " + url + "nType: " + type + "nWin: " + win); // debug/testing
+
+    /* If you work with sessions in PHP and your client doesn't accept cookies you might need to carry
+       the session name and session ID in the request string (can look like this: "?PHPSESSID=88p0n70s9dsknra96qhuk6etm5").
+       These lines of code extract the necessary parameters and add them back to the filebrowser URL again. */
+
+    var cmsURL = window.location.toString();    // script URL - use an absolute path!
+	cmsURL = '//kuhan-url///rlo-specs/index.php/edit/image_handle'
+    if (cmsURL.indexOf("?") < 0) {
+        //add the type as the only query parameter
+        cmsURL = cmsURL + "?type=" + type;
+    }
+    else {
+        //add the type as an additional query parameter
+        // (PHP session ID is now included if there is one at all)
+        cmsURL = cmsURL + "&type=" + type;
+    }
+
+    tinyMCE.activeEditor.windowManager.open({
+        file : cmsURL,
+        title : 'My File Browser',
+        width : 480,  // Your dimensions may differ - toy around with them!
+        height : 720,
+        resizable : "yes",
+        inline : "yes",  // This parameter only has an effect if you use the inlinepopups plugin!
+        close_previous : "no"
+    }, {
+        window : win,
+        input : field_name
+    });
+    return false;
+  }
+  tinymce.init({
+  selector: 'textarea',
+	browser_spellcheck: true,
+  gecko_spellcheck: true,
+  allow_script_urls: true,
+  extended_valid_elements : 'script[charset|defer|language|src|type],link[rel|href|type],span[css|id|style],svg',
+  plugins: 'code, image, imagetools, paste, link, textcolor, colorpicker, media',
+  toolbar: 'undo redo | paste bold italic backcolor alignleft aligncenter alignright bullist numlist outdent indent | link unlink | image | media | actlibrary | code',
+  file_browser_callback : myFileBrowser,
+  image_class_list: [
+    {title: 'Responsive', value: 'img-responsive'},
+	  {title: 'Unresponsive', value: 'img-unresponsive'}
+  ],
+  image_dimensions: false,
+  relative_urls : false,
+  remove_script_host : false,
+  convert_urls : true,
+  onchange_callback: function(editor) {
+       tinyMCE.triggerSave();
+       $("#" + editor.id).valid();
+   },
+   content_css : '//kuhan-url///rlo-specs/css/tiny.css', 
+	  
+	  
+	 setup: function(editor) { 
+		editor.addButton('actlibrary', {
+			//icon: 'media',
+			tooltip: "Insert Activity",
+			image: '//kuhan-url///rlo-specs//images/activity-icon.svg',
+			menu: [],
+			  onclick: function () {
+				 editor.windowManager.open({ 
+									title: 'Activity Library', url: '//kuhan-url///rlo-specs/index.php/activities/tiny_activities_ped/', 
+									width: $(window).width() * .75, 
+									height: $(window).height() * .75,
+									buttons: [{ 
+										text: 'Insert to Section',
+										id: 'activity_insert_button',
+										onclick: function(e) { 
+											//var d = $('.option:checked').attr('data'); 
+											top.tinymce.activeEditor.execCommand('mceInsertContent', false, '<div class="panel panel-default"><div class="panel-heading">Activity From HELM Activity Catalogue</div><div class="panel-body"><img class="img-responsive" alt="' + tinymce.activeEditor.act_title + '" src="'+tinymce.activeEditor.act_img_url+'" /></div><div  class="panel-footer"><a href="//kuhan-url///rlo-specs/index.php/activities/activities/'+tinymce.activeEditor.act_id+'" target="_blank" title="HELM Activity Catalogue Link to Activty Record">'+tinymce.activeEditor.act_title+'</a></div></div><div class="actvity_description"><blockquote><h4>Please describe how you envisage this activity working.</h4><br />&nbsp;<br /></blockquote></div>'); 
+											top.tinymce.activeEditor.windowManager.close(); 
+										} 
+									}, 
+									{ text: 'Cancel', onclick: 'close',id: 'activity_close_button' }] 
+								}); 
+			  }
+		});
+	 }
+	  
+				
+
+    
+});
+	
+
+</script>
+
+
+
+
+
+</head>
+
+<body>
+
+<div id="container">
+
+<header class="hidden-print">
+<img src="//kuhan-url///rlo-specs/images/helm-logo-white.png" class="pull-left" alt="Helth E-Learning and Media" />
+<h1>HELM RLO Specification System</h1>
+<div id="system_tools" class=""><span id="logo"><a href="//kuhan-url///rlo-specs/" class="btn btn-success"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;RLO Specification Home</a></span> 
+	<div class="btn-group">
+	<a href="#" title="System Tool" class="btn dropdown-toggle btn-medium btn-info" data-toggle="dropdown" id="system_tools">System Tools <b class="caret"></b></a>
+	
+	<ul class="dropdown-menu"><li><a href="//kuhan-url///rlo-specs/index.php/rlo/rlos" title="View all your RLO Specifications"><span class="glyphicon glyphicon-th-list"></span> View All Your RLO Specs</a></li><li><a href="//kuhan-url///rlo-specs/index.php/rlo/rlo_create/" title="Add New RLO Specification"><span class="glyphicon glyphicon-plus"></span> Add New RLO Spec</a></li><li><a href="//kuhan-url///rlo-specs/index.php/user/update_my_password"><span class="glyphicon glyphicon-lock"></span> Update My Password</a></li><li class="divider"></li><li class="dropdown-header"><span class="glyphicon glyphicon-th glyphicon-jigsaw"></span> Activity Catalogue</li><li><a href="//kuhan-url///rlo-specs/index.php/activities/activities">View Activity Catalogue</a></li><li><a href="//kuhan-url///rlo-specs/index.php/activities/keywords">Explore Activity Keywords</a></li><li><a href="//kuhan-url///rlo-specs/index.php/activities/pedagogy">Explore Pedagogical Categories</a></li><li><a href="//kuhan-url///rlo-specs/index.php/activities/activity_create">Add New Activity</a></li><li class="divider"></li><li><a href="//kuhan-url///rlo-specs/index.php/pages/view/gdpr">General Data Protection Regulations Statement</a></li><li class="divider"></li><li><a href="//kuhan-url///rlo-specs/index.php/pages/view/logout"><span class="glyphicon glyphicon-off"></span> Logout</a></li></ul></div></div></header>
+
+
+
+<div id="main_content" role="main" class="container">
+<script>
+$().ready(function(){
+	var max_height = 0;
+	
+	$('table td .apc').each(function(){
+		console.log(max_height);
+		if($(this).height() > max_height){
+			max_height = $(this).height();
+		}
+	});
+	
+	$('table td .apc').css('min-height',(max_height + 20));
+	$( "table td span.glyphicon-ok-circle" ).each(function() {
+	  $(this).parent().css('background', 'rgb(132,249,144)');
+	});
+	
+  	$('.previous_page_js').click(function(){
+		parent.history.back();
+		return false;
+	});
+	
+	
+});
+</script>
+<style>
+	table thead th{
+		text-align:center;
+	}
+	table td{padding:0 !important;}
+
+	table td .apc{
+		text-align:center;
+		display:block;
+		padding:5px;
+		font-weight:normal;
+		margin:0;
+
+	}
+	table tbody tr th,table tbody tr td{
+		vertical-align: middle !important;
+	}
+
+
+</style>
+<h2>
+<a href="//kuhan-url///rlo-specs/index.php/activities/activities/" class="btn_back previous_page_js" title="back"><span class="glyphicon glyphicon-chevron-left"></span></a> Review Activity</h2>
+
+
+
+<article>
+<h2>Flipping Information Panels</h2>
+
+<p><strong>Activity Developer:</strong> Aaron Fecowycz</p>	
+
+<blockquote>
+<p>This activity offers the opportunity of presenting panels of information behind flipping images. The user clicks upon one of the images and the image panel flips over presenting the user with a series of bullet points.</p>
+<p>In this example the RLO utilised a theme of performance and so the idea of dressing room lit mirrors was adopted.</p>	
+</blockquote>
+
+<h3>Keywords</h3><p style="font-size:2rem;"><a href="//kuhan-url///rlo-specs/index.php/activities/keywords/39/17"><span class="label label-primary">flipping</span></a> <a href="//kuhan-url///rlo-specs/index.php/activities/keywords/41/17"><span class="label label-primary">images</span></a> <a href="//kuhan-url///rlo-specs/index.php/activities/keywords/40/17"><span class="label label-primary">panels</span></a> </p>	
+	
+	
+	<h3>Activity Categorisation</h3>
+  <table class="table table-bordered">
+		<thead>
+  <tr>
+    <th>&nbsp;</td>
+    <th scope="col">Factual<br>Basic Information</td>
+    <th scope="col">Conceptual<br />Relationships between Elements</td>
+    <th scope="col">Procedural<br />Methods, processes, algorithms, techniques</td>
+    <th scope="col">Metacognitive<br />Wider information with learners&rsquo; experience</td>
+  </tr>
+		</thead>
+<tbody>
+  <tr>
+    <th scope="row">Providing Information</th>
+    <td><div class="apc">Providing facts, figures, etc <br /><span class="glyphicon glyphicon-ok-circle"></span></div></td>
+    <td><div class="apc">Providing information about the relationships between information<br /></div></td>
+    <td><div class="apc">Providing information about procedures and techniques<br /></div></td>
+    <td><div class="apc">Providing frameworks for how information relates to learners&rsquo; wider knowledge and experience<br /></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Testing Knowledge</th>
+    <td><div class="apc">Tests facts, figures, etc<br /></div></td>
+    <td><div class="apc">Tests  relationships between information<br /></div></td>
+    <td><div class="apc">Tests knowledge of  procedures and techniques<br /></div></td>
+    <td><div class="apc">Tests understanding wider knowledge including elements outside of the RLO<br /></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Application</th>
+    <td><div class="apc">Models to help the learner apply facts and figures<br /></div></td>
+    <td><div class="apc">Models to help the learner apply relationships between information<br /></div></td>
+    <td><div class="apc">Models to help the learner apply procedural information<br /></div></td>
+    <td><div class="apc">Models that require learner to apply wider knowledge<br /></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Reflection</th>
+    <td><div class="apc">Activities that allow learner to reflect of factual information<br /> </div></td>
+    <td><div class="apc">Activities that allow learner to reflect on relationships<br /></div></td>
+    <td><div class="apc">Activities that allow learner to reflect on procedures<br /></div></td>
+    <td><div class="apc">Activities that allow learner to reflect on wider knowledge<br /></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Analysing</th>
+    <td><div class="apc">Activities that allow learner to look more deeply at factual information, eg breaking it down to component parts<br /></div></td>
+    <td><div class="apc">Activities that allow learner to look more deeply at  relationships between information, eg looking at individual connections<br /></div></td>
+    <td><div class="apc">Activities that allow learner to look more deeply at procedures, eg breaking these down into component elements/building these up<br /></div></td>
+    <td><div class="apc">Activities that allow learner to look more deeply at knowledge outside of that provided within the RLO, perhaps by identifying individual components and steps<br /></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Evaluating</th>
+    <td><div class="apc">Activities that allow the learner to evaluate information, such as its strengths and weaknesses<br /></div></td>
+    <td><div class="apc">Activities that allow the learner to evaluate relationships between information, such as its strengths and weaknesses, barriers and drivers<br /></div></td>
+    <td><div class="apc">Activities that allow the learner to evaluate procedures, such as its strengths and weaknesses<br /></div></td>
+    <td><div class="apc">Activities that allow the learner to evaluate wider knowledge and the place of information contained with the RLO, such as its strengths and weaknesses, barriers and drivers.<br /></div></td>
+  </tr>
+	</tbody>
+  </table>
+			
+	
+	
+
+	
+
+	
+
+	
+	<div class="panel panel-default"><div class="panel-heading"><h3>Explore the Activity</h3></div><div class="panel-body">
+	<iframe src="///screen07.html" width="100%" height="2200px" style="border:none;"></iframe>
+	</div>
+		<div class="panel-footer text-center"><a href="///screen07.html" class="btn btn-success" target="_blank">Explore the Activity (Opens in a new window)</a></div>
+	</div>
+	
+		
+	<p class="text-center">Date Added to Activity Catalogue: 2019-02-20 10:13:45 | Date of Last Record Update 2019-02-22 09:46:53</p>
+	
+</article>
+
+
+
+
+
+<hr class="clear" />
+
+</div>
+<footer class="hidden-print">
+<p class="pull-right">&copy; 2020 The University of Nottingham</p>
+<p>Developed By: <a href="mailto:aaron.fecowycz@nottingham.ac.uk">Aaron Fecowycz</a></p>
+
+</footer>
+
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-5661959-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-5661959-1');
+</script>
+
+</body>
+</html>

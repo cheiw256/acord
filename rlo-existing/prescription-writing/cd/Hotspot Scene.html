@@ -1,0 +1,258 @@
+<html lang="en-gb"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Single Activity</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href=//kuhan-urlcss/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href=//kuhan-urlcss/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href=//kuhan-urlcss/screen.css">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src=//kuhan-urlscripts/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src=//kuhan-urlscripts/bootstrap.min.js"></script>
+<script src=//kuhan-urlscripts/rlo-spec-help.js"></script>
+<!--
+
+<link rel="stylesheet" type="text/css" href=//kuhan-urlcss/print.css" media="print">
+<script type="text/javascript" src=//kuhan-urlscripts/jquery-latest.js"></script>
+<script type="text/javascript" src=//kuhan-urlscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src=//kuhan-urlscripts/modernizr.js"></script>
+<script type="text/javascript" src=//kuhan-urlscripts/bootstrap.min.js"></script>
+-->
+
+<link rel="shortcut icon" href=//kuhan-urlimages/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href=//kuhan-urlimages/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href=//kuhan-urlimages/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href=//kuhan-urlimages/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href=//kuhan-urlimages/apple-touch-icon-57x57-precomposed.png">
+<link rel="icon" sizes="192x192" href="images/https://www.nottingham.ac.uk/~ntzalf/rlo-specs/icon-192x192.png">
+
+<script src=//kuhan-urltinymce/tinymce.min.js"></script>
+<script>
+
+ function myFileBrowser (field_name, url, type, win) {
+
+    // alert("Field_Name: " + field_name + "nURL: " + url + "nType: " + type + "nWin: " + win); // debug/testing
+
+    /* If you work with sessions in PHP and your client doesn't accept cookies you might need to carry
+       the session name and session ID in the request string (can look like this: "?PHPSESSID=88p0n70s9dsknra96qhuk6etm5").
+       These lines of code extract the necessary parameters and add them back to the filebrowser URL again. */
+
+    var cmsURL = window.location.toString();    // script URL - use an absolute path!
+	cmsURL = 'https://www.nottingham.ac.uk/~ntzalf/rlo-specs/index.php/edit/image_handle'
+    if (cmsURL.indexOf("?") < 0) {
+        //add the type as the only query parameter
+        cmsURL = cmsURL + "?type=" + type;
+    }
+    else {
+        //add the type as an additional query parameter
+        // (PHP session ID is now included if there is one at all)
+        cmsURL = cmsURL + "&type=" + type;
+    }
+
+    tinyMCE.activeEditor.windowManager.open({
+        file : cmsURL,
+        title : 'My File Browser',
+        width : 480,  // Your dimensions may differ - toy around with them!
+        height : 720,
+        resizable : "yes",
+        inline : "yes",  // This parameter only has an effect if you use the inlinepopups plugin!
+        close_previous : "no"
+    }, {
+        window : win,
+        input : field_name
+    });
+    return false;
+  }
+  tinymce.init({
+  selector: 'textarea',
+	browser_spellcheck: true,
+  gecko_spellcheck: true,
+  allow_script_urls: true,
+  extended_valid_elements : 'script[charset|defer|language|src|type],link[rel|href|type],span[css|id|style],svg',
+  plugins: 'code, image, imagetools, paste, link, textcolor, colorpicker, media',
+  toolbar: 'undo redo | paste bold italic backcolor alignleft aligncenter alignright bullist numlist outdent indent | link unlink | image | media | actlibrary | code',
+  file_browser_callback : myFileBrowser,
+  image_class_list: [
+    {title: 'Responsive', value: 'img-responsive'},
+	  {title: 'Unresponsive', value: 'img-unrespo
+
+</head>
+
+<body>
+
+<div id="container">
+
+<header class="hidden-print">
+<img src=//kuhan-urlimages/helm-logo-white.png" class="pull-left" alt="Helth E-Learning and Media">
+
+<div id="main_content" role="main" class="container">
+<script>
+$().ready(function(){
+	var max_height = 0;
+	
+	$('table td .apc').each(function(){
+		console.log(max_height);
+		if($(this).height() > max_height){
+			max_height = $(this).height();
+		}
+	});
+	
+	$('table td .apc').css('min-height',(max_height + 20));
+	$( "table td span.glyphicon-ok-circle" ).each(function() {
+	  $(this).parent().css('background', 'rgb(132,249,144)');
+	});
+	
+  	$('.previous_page_js').click(function(){
+		parent.history.back();
+		return false;
+	});
+	
+	
+});
+</script>
+<style>
+	table thead th{
+		text-align:center;
+	}
+	table td{padding:0 !important;}
+
+	table td .apc{
+		text-align:center;
+		display:block;
+		padding:5px;
+		font-weight:normal;
+		margin:0;
+
+	}
+	table tbody tr th,table tbody tr td{
+		vertical-align: middle !important;
+	}
+
+
+</style>
+<h2>
+<a href=//kuhan-urlindex.php/activities/activities/" class="btn_back previous_page_js" title="back"><span class="glyphicon glyphicon-chevron-left"></span></a> Review Activity</h2>
+
+
+
+<article>
+<h2>Hotspot Scene Exploration with Early Completion Option</h2>
+
+<p><strong>Activity Developer:</strong> Aaron Fecowycz</p>	
+
+<blockquote>
+<p>The user can click on the scene to try and identify potential risks. Correctly identifying and selecting a visible risk results in feedback on the specific risk along with the risk item being visually highlighted.<br><br>Should the user select an incorrect risk item feedback is provided. If the user incorrectly identifies 5 features of the scene they are offered the opportunity to end the activity and review the learning points.</p>	
+</blockquote>
+
+<h3>Keywords</h3><p style="font-size:2rem;"><a href=//kuhan-urlindex.php/activities/keywords/1/11"><span class="label label-primary">create.js</span></a> <a href=//kuhan-urlindex.php/activities/keywords/28/11"><span class="label label-primary">early completion</span></a> <a href=//kuhan-urlindex.php/activities/keywords/24/11"><span class="label label-primary">feedback</span></a> <a href=//kuhan-urlindex.php/activities/keywords/14/11"><span class="label label-primary">hotspot</span></a> <a href=//kuhan-urlindex.php/activities/keywords/27/11"><span class="label label-primary">scene exploration</span></a> </p>	
+	
+	
+	<h3>Activity Categorisation</h3>
+  <table class="table table-bordered">
+		<thead>
+  <tr>
+    <th>&nbsp;
+    </th><th scope="col">Factual<br>Basic Information
+    </th><th scope="col">Conceptual<br>Relationships between Elements
+    </th><th scope="col">Procedural<br>Methods, processes, algorithms, techniques
+    </th><th scope="col">Metacognitive<br>Wider information with learners’ experience
+  </th></tr>
+		</thead>
+<tbody>
+  <tr>
+    <th scope="row">Providing Information</th>
+    <td><div class="apc" style="min-height: 100px;">Providing facts, figures, etc <br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Providing information about the relationships between information<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Providing information about procedures and techniques<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Providing frameworks for how information relates to learners’ wider knowledge and experience<br></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Testing Knowledge</th>
+    <td><div class="apc" style="min-height: 100px;">Tests facts, figures, etc<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Tests  relationships between information<br></div></td>
+    <td><div class="apc" style="min-height: 100px; background: rgb(132, 249, 144) none repeat scroll 0% 0%;">Tests knowledge of  procedures and techniques<br><span class="glyphicon glyphicon-ok-circle"></span></div></td>
+    <td><div class="apc" style="min-height: 100px;">Tests understanding wider knowledge including elements outside of the RLO<br></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Application</th>
+    <td><div class="apc" style="min-height: 100px;">Models to help the learner apply facts and figures<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Models to help the learner apply relationships between information<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Models to help the learner apply procedural information<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Models that require learner to apply wider knowledge<br></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Reflection</th>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow learner to reflect of factual information<br> </div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow learner to reflect on relationships<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow learner to reflect on procedures<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow learner to reflect on wider knowledge<br></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Analysing</th>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow learner to look more deeply at factual information, eg breaking it down to component parts<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow learner to look more deeply at  relationships between information, eg looking at individual connections<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow learner to look more deeply at procedures, eg breaking these down into component elements/building these up<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow learner to look more deeply at knowledge outside of that provided within the RLO, perhaps by identifying individual components and steps<br></div></td>
+  </tr>
+  <tr>
+    <th scope="row">Evaluating</th>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow the learner to evaluate information, such as its strengths and weaknesses<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow the learner to evaluate relationships between information, such as its strengths and weaknesses, barriers and drivers<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow the learner to evaluate procedures, such as its strengths and weaknesses<br></div></td>
+    <td><div class="apc" style="min-height: 100px;">Activities that allow the learner to evaluate wider knowledge and the place of information contained with the RLO, such as its strengths and weaknesses, barriers and drivers.<br></div></td>
+  </tr>
+	</tbody>
+  </table>
+			
+	
+	
+
+	
+
+	
+
+	
+	<div class="panel panel-default"><div class="panel-heading"><h3>Explore the Activity</h3></div><div class="panel-body">
+	<iframe src="https://www.nottingham.ac.uk/helmopen/rlos/mentalhealth/octoe/risk/page5.html" style="border:none;" width="100%" height="2200px"></iframe>
+	</div>
+		<div class="panel-footer text-center"><a href="https://www.nottingham.ac.uk/helmopen/rlos/mentalhealth/octoe/risk/page5.html" class="btn btn-success" target="_blank">Explore the Activity (Opens in a new window)</a></div>
+	</div>
+	
+		
+	<p class="text-center">Date Added to Activity Catalogue: 2019-02-13 12:54:48 | Date of Last Record Update 2019-02-22 09:51:16</p>
+	
+</article>
+
+
+
+
+
+<hr class="clear">
+
+</div>
+<footer class="hidden-print">
+<p class="pull-right">© 2020 The University of Nottingham</p>
+<p>Developed By: <a href="mailto:aaron.fecowycz@nottingham.ac.uk">Aaron Fecowycz</a></p>
+
+</footer>
+
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-5661959-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-5661959-1');
+</script>
+
+
+
+<!-- START help modal --><div class="modal fade" id="help_modal" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><h4 class="modal-title">RLO Specification System Help</h4></div><div class="modal-body"><!-- START modal content --><iframe src=//kuhan-urlindex.php/spec/RLOhelp/906" id="rlo_spec_help_iframe" width="100%" height="800"></iframe><!-- END modal content --></div><div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div></div></div></div><!-- END help modal --></body></html>

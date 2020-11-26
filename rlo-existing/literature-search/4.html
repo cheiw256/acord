@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NPFK3MD');</script>
+<!-- End Google Tag Manager -->
+    
+<meta charset="utf-8">
+<title>Literature Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href="css/styles.css" rel="stylesheet">
+
+	<style type="text/css">
+		/* START Microsoft Edge Browser 12 (only)and (not (color:unset)) */
+		@supports (-ms-accelerator:true) {
+			#activity_container {
+				-ms-touch-action: none;
+				touch-action: none;
+			}
+		}
+
+		/*#activity_container{
+	-ms-touch-action: none;
+	touch-action: none;
+}*/
+		/* END Microsoft Edge Browser 12 (only) */
+
+		.droppable_area input {
+			width: 100%;
+			border: 1px solid #210AE7;
+		}
+
+		.droppable_area .droppable_answer {
+			text-align: center;
+			background-color: lightcyan;
+			display: none;
+		}
+
+		.drop-hover input {
+			background-color: lightblue;
+		}
+
+		/* .droppable_area ul {
+		background: #E6FFFF;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		} */
+
+		/* .droppable_area ul li {
+		visibility: hidden;
+		} */
+
+		#act_drag_items {
+			text-align: center;
+			visibility: hidden;
+			padding-inline-start: 0;
+		}
+
+		#act_drag_items li {
+			display: inline-block;
+			border: 1px solid #666;
+			border-radius: 5px;
+			padding: 5px;
+			margin-bottom: 10px;
+			margin-left: 10px;
+			background-color: lightblue;
+		}
+
+		#act_drag_items li:hover {
+			cursor: move;
+		}
+
+		.step-grid {
+			display: grid;
+			justify-content: space-between;
+			grid-template-columns: auto minmax(auto, 330px);
+			row-gap: 20px;
+		}
+
+		.step-item-label {
+			margin-right: 20px;
+		}
+
+		/* @media(max-width:767px) {
+		.droppable_area ul {
+			background: #E6FFFF;
+			list-style: none;
+			padding: 0;
+		}
+
+		.droppable_area ul li {
+			border-bottom: 1px dashed #0CF;
+		}
+
+		.activity_title {
+			min-height: 3em;
+		}
+	} */
+	</style>
+	
+	
+</head>
+<body>
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPFK3MD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+<a id="doc_top"></a>
+<a class="sr-only sr-only-focusable" href="#content_start">Skip to main content</a>
+<div class="container" id="main_container">
+
+
+<header class="clearfix" role="banner">
+<img src="images/um logo crop.jpg" width="144" height="65" id="university_logo" class="pull-right">
+<img src="images/acord-logo.png" alt="ACoRD" width="65" height="70" id="acord_logo" class="pull-right">
+<p class="rlo_title">Literature Search</p>
+<p class="school_title"><b>Learning Objective</b>: At the end of this RLO, students should be able to search for literature and answer clinical questions.&nbsp;&nbsp;</p>
+<!-- START Narration Audio -->
+
+<!-- END Narration Audio -->
+</header>
+
+<nav class="nav nav-pills hidden-xs" role="navigation" id="main_nav">
+	<div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">
+        Contents <span class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+        <ul class="dropdown-menu" role="menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="1.html">Clinical scenario: Short needle or long needle?</a></li>
+            <li><a href="2.html">Formulating a clinical question</a></li>
+            <li><a href="3.html">Identifying the PICO</a></li>
+            <li><a href="4.html">Identifying synonyms</a></li>
+            <li><a href="5.html">Identifying the Medical Subject Heading (MeSH)</a></li>
+            <li><a href="6.html">Combining search terms using Boolean operators</a></li>
+            <li><a href="7.html">Searching for articles: PubMed</a></li>
+			<li><a href="8.html">Your answer: Short or long needle?</a></li>
+            <li><a href="9.html">Summary</a></li>
+			<li><a href="10.html">Feedback</a></li>
+			<li><a href="11.html">Resources</a></li>
+			<li class="nav-divider"></li>
+          <li><a href="http://acord.my/rlos">ACoRD RLOs</a></li>
+        </ul>
+    </div>	
+    <a href="3.html" class="btn btn-primary  btn-sm"><span class="glyphicon glyphicon-circle-arrow-left"></span> Previous </a>
+ 	<a href="5.html" id="next_btn" class="btn btn-primary btn-sm">Next <span class="glyphicon glyphicon-circle-arrow-right"></span></a>
+
+</nav>
+
+
+<div class="visible-xs-block" id="small_screen_menu_container">
+<p class="rlo_title">Literature Search</p>
+<p><a class="btn btn-primary btn-block" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="toggle_ss_nav">
+  Toggle Navigation <span class="glyphicon glyphicon-remove glyphicon-menu-hamburger" aria-hidden="true"></span></a></p>
+<div class="collapse" id="collapseExample">
+<ul class="btn-group btn-group-vertical center-block" role="menu" id="small_screen_menu">
+	<li><a href="index.html" class="btn btn-info btn-block">Home</a></li>
+    <li><a href="1.html" class="btn btn-info btn-block">Clinical scenario: Short needle or long needle?</a></li>
+    <li><a href="2.html"  class="btn btn-info btn-block">Formulating a clinical question</a></li>
+    <li><a href="3.html"  class="btn btn-info btn-block">Identifying the PICO</a></li>
+    <li><a href="4.html"  class="btn btn-info btn-block">Identifying sysnonyms</a></li>
+    <li><a href="5.html"  class="btn btn-info btn-block">Identifying the Medical Subject Heading (MeSH)</a></li>
+    <li><a href="6.html" class="btn btn-info btn-block">Combining search terms using Boolean operators</a></li>
+	<li><a href="7.html"  class="btn btn-info btn-block">Searching for articles: PubMed</a></li>
+    <li><a href="8.html" class="btn btn-info btn-block">Your answer: Short or long needle?</a></li>
+    <li><a href="9.html" class="btn btn-info btn-block">Summary</a></li>
+	<li><a href="10.html" class="btn btn-info btn-block">Feedback</a></li>
+	<li><a href="11.html" class="btn btn-info btn-block">Resources</a></li>
+	<li><a href="http://acord.my/rlos" class="btn btn-info btn-block">ACoRD RLOs</a></li>
+</ul>
+</div>
+</div>
+
+
+
+<main role="main">
+<article>
+<a id="content_start"></a>
+<h2>Identifying synonyms</h2>
+<div class="row">
+<div class="col-md-6" id="text-component">
+<!-- START text column -->
+You already have the keywords for each of the P, I ,C & O. However, not all studies used these keywords and you may not find the relevant paper only with these. Hence, it is important to think about other keywords with the same meaning (synonym) to increase your chance of getting relevant papers in your search results. You can try to search for the synonyms / alternative keywords for each of the PICO by:
+<br><br>
+<ul>
+<li>using online dictionaries eg. <a href= "https://www.merriam-webster.com/" target="_blank">Merriam-webster</a>, thesaurus or <a href="https://dictionary.cambridge.org/" target="_blank">Cambridge</a> dictionary</li>
+<li>searching on a search engine such as <a href="https://scholar.google.com.my/" target="_blank">Google Scholar</a> using the initial keywords, then, scanning the titles of articles of the search results to look for alternative words and phrases</li>
+<li>examining relevant abstracts or articles for alternative words or phrases.</li>
+</ul>
+<br>
+Write down the words and phrases that you feel similar to your initial keywords and add them to your PICO.
+<br><br>
+<I>*Tips: Use inverted commas to find the exact phrase instead of individual word, eg. "long needle"</I>
+<br><br><br>
+<!-- END text column -->
+</div>
+
+
+	
+
+
+
+
+
+
+
+	<div class="col-md-6">
+<b>For the purpose of the example used in this RLO, please drag a synonym to each of the categories below:</b>
+
+
+						<div class="activity_container">
+							<div class="row">
+								<div class="col-md-12">
+								
+									<br>
+									<div class="row">
+									    <div class="col-xs-1">
+									        </div>
+										<div class="col-xs-9">
+
+											<div class="step-grid">
+												<!-- Step 1 -->
+												<span class="step-item-label"><b>P: </b>Baby, </span>
+												<div>
+													<div class="droppable droppable_area drop_target" data-type="step_1" data-class="activity_step1">
+														<input class="blank_activity_step1" type="text" readonly>
+														<input class="droppable_answer activity_step1" type="text" value="Infant" readonly>
+													</div>
+												</div>
+												<!-- Step 2 -->
+												<span class="step-item-label"><b>I: </b> Long needle,</span>
+												<div>
+													<div class="droppable droppable_area drop_target" data-type="step_2" data-class="activity_step2">
+														<input class="blank_activity_step2" type="text" readonly>
+														<input class="droppable_answer activity_step2" type="text" value="Needle size" readonly>
+													</div>
+												</div>
+												<!-- Step 3 -->
+												<span class="step-item-label"><b>C: </b> Short needle,</span>
+												<div>
+													<div class="droppable droppable_area drop_target" data-type="step_2" data-class="activity_step3">
+														<input class="blank_activity_step3" type="text" readonly>
+														<input class="droppable_answer activity_step3" type="text" value="Needle size" readonly>
+													</div>
+												</div>
+												<!-- Step 4 -->
+												<span class="step-item-label"><b>O:</b> Local reaction,</span>
+												<div>
+													<div class="droppable droppable_area drop_target" data-type="step_4" data-class="activity_step4">
+														<input class="blank_activity_step4" type="text" readonly>
+														<input class="droppable_answer activity_step4" type="text" value="Swelling" readonly>
+													</div>
+												</div>
+											
+												</div>
+											</div>
+										</div>
+
+										
+									</div>
+
+
+								</div>
+							</div>
+
+							<br>
+							<br>
+
+							<div class="alert alert-success text-center" style="display: none;" id="feedback_success"></div>
+							<div class="alert alert-danger text-center" style="display: none;" id="feedback_error"></div>
+
+							<ul id="act_drag_items">
+								<li class="act_drag_at draggable" data-activity="step_1" data-class="activity_step1">Infant </li>
+								<li class="act_drag_at draggable" data-activity="step_2" data-class="activity_step2">Needle size</li>
+								<li class="act_drag_at draggable" data-activity="step_2" data-class="activity_step3">Needle size</li>
+								<li class="act_drag_at draggable" data-activity="step_4" data-class="activity_step4">Swelling</li>
+								<li class="act_drag_at draggable" data-activity="step_5" data-class="activity_step5">Pain</li>
+								<li class="act_drag_at draggable" data-activity="step_6" data-class="activity_step6">Mother</li>
+								<li class="act_drag_at draggable" data-activity="step_7" data-class="activity_step7">Anxiety</li>
+								<li class="act_drag_at draggable" data-activity="step_8" data-class="activity_step8">Vaccination</li>
+								<li class="act_drag_at draggable" data-activity="step_9" data-class="activity_step9">Injection</li>
+
+							</ul>
+
+					</div>
+</div>
+					
+					
+
+<nav class="section_nav" role="navigation">
+<ul class="clearfix ">
+<li class="pull-left "><a href="3.html" class="btn btn-primary"><span class="glyphicon glyphicon-circle-arrow-left"></span> Previous </a></li>
+<li class="pull-right"><a href="5.html" class="btn btn-primary">Next <span class="glyphicon glyphicon-circle-arrow-right"></span></a></li>
+</ul>
+</nav>
+
+</article>
+</main>
+
+<!-- START doc top navigation -->
+<div class="visible-xs-block" id="doc_top_btn"><a href="#doc_top" class="btn btn-info btn-block">Document Top <span class="glyphicon glyphicon-circle-arrow-up"></span></a></div>
+<!-- END doc top navigation -->
+
+<footer  role="contentinfo">
+<div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    <span class="sr-only">40 Complete</span>
+  </div>
+</div>
+
+
+<div class="row">
+<div class="col-md-8 text-left">
+<ul>
+<li><i>"This project has been funded with support from the European Commission. This publication [communication] reflects the view only of the author, and the Commission cannot be held responsible for any use which may be made of the information contained therein."</i></li>
+<li>Content authors: Su May Liew, Ranita Hisham Shunmugam, Chin Hai Teo</li>
+<li>Contributors: Swee Shiuan Wong, Claire Wan Yuen Choo, Yew Kong Lee</li>
+<li>Artwork contributor: Elena May Saini Jeffery</li>
+<li>Developers: Kuhan Krishnan, Jing Hooi Koey, Othniel Panyih, Chin Hai Teo, Kai Nan Tee</li>
+<li>HTML5 Conversion: <a href="mailto:aaron.fecowycz@nottingham.ac.uk">Aaron Fecowycz</a></li>
+</ul>
+</div>
+
+<div class="col-md-4 text-right">
+<img src="images/erasmus.jpg" alt="Co-funded by the Erasmus+ Programme of the European Union" width="194" height="50" id="eu_logo">	
+<p>RLO released: 01 Oct 2020</p>
+<p>Page last updated: 30 Sep 2020</p>
+<p><a href="http://creativecommons.org/licenses/by-nc/2.0/uk/" title="Creative Commons licence."><img src="images/cc_88x31.png" alt="Creative Commons licence." width="88" height="31" /></a> <a href="http://www.nottingham.ac.uk/nmp/sonet/rlos/rlocopyright.html">Terms of use</a></p>
+</div>
+</div>
+</footer>
+</div>
+
+
+<!-- START Modals -->
+
+
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="activity_complete_label" id="activity_complete">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="activity_complete_label">Activity Complete <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h3>
+				</div>
+				<div class="modal-body">
+					<p>Well done!</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal" id="activity1_continue">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- END Modals -->
+	
+	
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery.ui.touch-punch.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/tools.js"></script>
+
+	<script>
+		$(function () {
+
+			var count = 0;
+			$('#feedback_error').hide();
+			$('#feedback_success').hide();
+			var message = '';
+
+
+			// var holder = 0;
+			// $(".drop_target ul").each(function (index) {
+			// 	if ($(this).height() > holder) {
+			// 		holder = ($(this).height() + 10);
+			// 	}
+			// });
+
+			// $(".drop_target ul").each(function (index) {
+			// 	$(this).height(holder);
+			// });
+
+
+
+			// START randomise the order of the activities
+			$.fn.randomize = function (selector) {
+				var $elems = selector ? $(this).find(selector) : $(this).children(),
+					$parents = $elems.parent();
+
+				$parents.each(function () {
+					$(this).children(selector).sort(function () {
+						return Math.round(Math.random()) - 0.5;
+						// }). remove().appendTo(this); // 2014-05-24: Removed `random` but leaving for reference. See notes under 'ANOTHER EDIT'
+					}).detach().appendTo(this);
+				});
+
+				return this;
+			};
+			// END randomise the order of the activities
+
+			$('#act_drag_items').randomize();
+			$('#act_drag_items').css('visibility', 'visible');
+
+
+
+			$(".draggable").draggable({ revert: true, cursor: "move", opacity: 0.8 });
+			//,containment: "parent"
+			$(".drop_target").droppable({ drop: handle_label_drop, hoverClass: "drop-hover" });
+
+			//$( ".draggable" ).on( "drop", function( event, ui ) {window.alert('dropped');} );
+
+			//get original positions of drag elements 
+
+
+			function handle_label_drop(event, ui) {
+				var drop_target_value = $(this).data('type');
+				var label_value = ui.draggable.data('activity');
+				$('#feedback_error').hide();
+				$('#feedback_success').hide();
+				//alert(label_value +' | '+ drop_target_value);
+
+				if ((drop_target_value == label_value) || (label_value == 'all')) {
+
+					//alert('match');
+					ui.draggable.hide();
+
+					$(this).addClass('correct');
+					$('.' + $(this).data('class')).css("display", "block");
+					$('.blank_' + $(this).data('class')).css("display", "none");
+
+					// trigger complete modal
+
+					// switch (ui.draggable.data('class')) {
+					// 	case 'activity_step1':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step2':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step3':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step4':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step5':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step6':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step7':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step8':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step9':
+					// 		message = '.</b>'; break;
+					// 	case 'activity_step10':
+					// 		message = '.</b>'; break;
+					// 	default:
+					// 		message = '';
+					// }
+
+
+					count++;
+					$('#feedback_success').html('<span class="glyphicon glyphicon-ok"></span> <b>Correct!</b> ' + message + '');
+					$('#feedback_success').show();
+					if (count == 4) {
+						$('#activity_complete').modal('show');
+					}
+
+
+
+					//$(this).html(label_value);
+					//ui.draggable.draggable( 'disable' );
+					//$(this).droppable( 'disable' );
+					ui.draggable.position({ of: $(this), my: '50% 50%', at: '50% 50%' });
+					//ui.draggable.draggable( 'option', 'revert', false );
+					//correctCards++;
+				} else {
+					// No match
+					ui.draggable.draggable('option', 'revert', true);
+
+					$('#feedback_error').html('<span class="glyphicon glyphicon-remove"></span> <b>Incorrect! Please try again.</b>');
+					$('#feedback_error').show();
+
+				}
+
+				// If all the cards have been placed correctly then display a message
+				// and reset the cards for another go
+
+			}
+		});
+
+
+	</script>
+
+	<!-- START Tracking Code -->
+	<script type="text/javascript" src="http://acord.my/scripts/tracking-code.js"></script>
+	<!-- END Tracking Code -->
+
+</body>
+
+</html>
