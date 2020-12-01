@@ -6,6 +6,7 @@ import CreativeLogo from './images/cc_88x31.png'
 import {Button, Col, Row} from "react-bootstrap";
 import {Component} from "react";
 import {FaArrowCircleUp} from "react-icons/fa"
+import "./css/styles.css"
 
 const mainTitle = "Prescription Writing: Back to Basics"
 
@@ -32,6 +33,13 @@ const contents = [
 const releaseDate = "1 September 2020"
 
 const updatedDate = "18 June 2020"
+
+function handleMouseEnter(e){
+    document.getElementById('info-container').innerHTML = e.target.getAttribute("data-info");
+}
+function handleMouseLeave(){
+    document.getElementById('info-container').innerHTML = "Please hover your mouse cursor to the numbered buttons on the prescription to see the importance of each part of the prescription.";
+}
 
 class App extends Component {
 
@@ -106,21 +114,33 @@ class App extends Component {
 
                                     <a tabIndex="0" className="btn btn-primary image_button" role="button"
                                        id="button_01"
+                                       onMouseEnter={handleMouseEnter}
+                                       onMouseLeave={handleMouseLeave}
                                        data-info="<p>A diagnosis is written for the pharmacist to confirm the indication of the medication prescribed.</p>">1</a>
                                     <a tabIndex="0" className="btn btn-primary image_button" role="button"
                                        id="button_02"
+                                       onMouseEnter={handleMouseEnter}
+                                       onMouseLeave={handleMouseLeave}
                                        data-info="<p>Patient's details are required to identify the patient for whom the medications are prescribed. <br><br>Essential information includes: name, age, hospital identification number or personal ID, age and gender. <br><br>The patient's information is important for the pharmacist to counter check on the medication safety issues. <br><br>For children under 12 years of age, the weight must be written on the prescription for dosage calculation.  </p>">2</a>
                                     <a tabIndex="0" className="btn btn-primary image_button" role="button"
                                        id="button_03"
+                                       onMouseEnter={handleMouseEnter}
+                                       onMouseLeave={handleMouseLeave}
                                        data-info="<p>The medication prescribed with the name of medication in generic form, route of administration, dose, frequency and duration.</p>">3</a>
                                     <a tabIndex="0" className="btn btn-primary image_button" role="button"
                                        id="button_04"
+                                       onMouseEnter={handleMouseEnter}
+                                       onMouseLeave={handleMouseLeave}
                                        data-info="<p>Signature of the medical practitioner and official stamp are required to ensure that the prescriber is a registered medical practitioner and is authorised to prescribe the medication. <br><br>The prescriber's contact details are necessary should there be a need to clarify the medicine prescribed. <br><br>For example, clarification is needed when the handwriting is illegible, wrong dosage or when a patient is accidentally prescribed with a medication which he/she is allergic to.</p>">4</a>
                                     <a tabIndex="0" className="btn btn-primary image_button" role="button"
                                        id="button_05"
+                                       onMouseEnter={handleMouseEnter}
+                                       onMouseLeave={handleMouseLeave}
                                        data-info="<p>Date is required to ensure the validity of a prescription. The prescription is valid for the duration it is written for.</p>">5</a>
                                     <a tabIndex="0" className="btn btn-primary image_button" role="button"
                                        id="button_06"
+                                       onMouseEnter={handleMouseEnter}
+                                       onMouseLeave={handleMouseLeave}
                                        data-info="<p>Cross through the empty space of a prescription to avoid amendment by others.</p>">6</a>
                                     <br/>
                                 </div>
