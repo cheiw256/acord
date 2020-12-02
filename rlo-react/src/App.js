@@ -4,9 +4,8 @@ import AcordLogo from './images/acord-logo.png'
 import EramusLogo  from './images/erasmus.jpg'
 import CreativeLogo from './images/cc_88x31.png'
 import {Button, Col, Row} from "react-bootstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowCircleUp} from "@fortawesome/free-solid-svg-icons";
 import {Component} from "react";
+import {FaArrowCircleUp} from "react-icons/fa"
 
 const mainTitle = "Prescription Writing: Back to Basics"
 
@@ -148,7 +147,11 @@ class App extends Component {
                 <div className="d-block d-sm-none" id="doc_top_btn">
                     <Button className="btn btn-info btn-block" onClick={() => window.scrollTo(0, 0)}>
                         Document Top
-                        <FontAwesomeIcon icon={faArrowCircleUp}/>
+                        <FaArrowCircleUp
+                        
+                        
+                        />
+
                     </Button>
                 </div>
                 {/*END doc top navigation*/}
