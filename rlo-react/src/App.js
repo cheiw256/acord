@@ -104,7 +104,6 @@ class App extends Component {
                                 <div id="footballer">
                                     <img className="img-responsive" style={{width: '100%'}} src={Receipt}/>
 
-
                                     <a tabIndex="0" className="btn btn-primary image_button" role="button"
                                        id="button_01"
                                        data-info="<p>A diagnosis is written for the pharmacist to confirm the indication of the medication prescribed.</p>">1</a>
@@ -189,16 +188,13 @@ class App extends Component {
                         </Col>
                         <Col className="text-right" md={4}>
                             <div className="text-right">
-                                <img src={EramusLogo} alt="Co-funded by the Erasmus+ Programme of the European Union"
-                                     width="194" height="50" id="eu_logo"/>
+                                <img src={EramusLogo} alt="Co-funded by the Erasmus+ Programme of the European Union" width="194" height="50" id="eu_logo"/>
                                 <p>RLO released: {releaseDate}</p>
                                 <p>Page last updated: {updatedDate}</p>
-                                <p><a href="http://creativecommons.org/licenses/by-nc/2.0/uk/"
-                                      title="Creative Commons licence."><img
-                                    src={CreativeLogo} alt="Creative Commons licence." width="88" height="31"/></a>
-                                    <a
-                                        href="http://www.nottingham.ac.uk/nmp/sonet/rlos/rlocopyright.html">Terms of
-                                        use</a>
+                                <p>
+                                    <a href="http://creativecommons.org/licenses/by-nc/2.0/uk/" title="Creative Commons licence.">
+                                    <img src={CreativeLogo} alt="Creative Commons licence." width="88" height="31"/></a>
+                                    <a href="http://www.nottingham.ac.uk/nmp/sonet/rlos/rlocopyright.html">Terms of use</a>
                                 </p>
                             </div>
                         </Col>
